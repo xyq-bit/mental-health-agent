@@ -1,0 +1,10 @@
+{
+    "python.defaultInterpreterPath": "C:\\Users\\13207\\.conda\\envs\\mental_agent\\python.exe",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\Users\\13207\\.conda\\envs\\mental_agent;C:\\Users\\13207\\.conda\\envs\\mental_agent\\Scripts;${env:PATH}"
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}

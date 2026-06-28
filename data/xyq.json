@@ -1,0 +1,338 @@
+{
+  "history": [
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你好 xyq，我们来做一个PHQ-9心理健康测评。\n\n1. 做任何事都提不起劲或没有乐趣？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "是的",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "我能感受到你现在的状态可能很沉重，这种对事物失去兴趣的感觉确实会让人感到疲惫和孤独。请记得，你并不需要独自面对这一切，适当的休息和倾诉都是可以的。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：2. 感到心情低落、沮丧或绝望？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "没有",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听到你感觉心情平稳，这真是太好了。希望这样的状态能一直陪伴你。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：3. 入睡困难、睡不安稳或睡得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "是的",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您在睡眠方面遇到了一些困扰，无论是难以入睡、睡眠不踏实还是睡得过多，这种状态可能让您感到疲惫和不安。请记得，睡眠问题很常见，您并不孤单。我们可以一起慢慢关注和改善它。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：4. 感到疲倦或没有活力？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听到您没有感到疲倦或没有活力，这真是太好了。充足的精力是生活中很宝贵的状态，希望您能继续保持这份轻松和活力。如果您有任何其他感受或想法，都可以随时和我分享。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：5. 食欲不振或吃得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你目前的饮食状态很平稳，这很好。保持健康的饮食习惯是照顾自己的重要方式，你做得不错。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：6. 觉得自己很糟，或觉得自己很失败，或让自己及家人失望？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听到你这样说，我感到很欣慰。似乎你目前对自己的感受是平稳的，没有陷入过度的自我否定。这很棒，说明你可能在积极面对生活中的挑战。如果你愿意，可以和我聊聊最近让你感到开心或自豪的事情，我会一直在这里倾听。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：7. 专注于别的事有困难，例如看报纸或看电视？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您在这方面没有困扰，能够轻松地集中注意力，这很好。希望您继续保持这种状态。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：8. 行动或说话速度慢到别人已经察觉？或者正好相反，烦躁不安、动来动去？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你在行动和说话速度方面保持得比较平稳，没有出现明显的迟缓或烦躁不安的情况，这很好。继续保持这种状态，你的身心都显得很协调。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：9. 脑海中曾冒出过'不如死掉算了'或'用某种方式伤害自己'的念头？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听到你这样的回答，我感到很欣慰。这说明你目前的状态中没有被这些痛苦的念头所困扰。继续保持这样积极的心态，如果未来有任何情绪上的波动，记得随时可以寻求支持。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "测评完成！总分 5。评估结果：轻度抑郁倾向。现在我们可以自由交流了。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "content": "好吧"
+    },
+    {
+      "role": "assistant",
+      "content": "我能感受到你愿意分享这些结果，是需要一些勇气的。5分这个分数，它提醒我们可能有些情绪波动或压力正在悄悄影响你——但请记得，这只是一个参考，不是定义你的标签。你最近是否感觉情绪像一层薄雾一样，偶尔遮住阳光？或者有某些时刻，明明很想努力，却觉得力气被轻轻抽走了？"
+    }
+  ],
+  "state": {
+    "q_idx": 9,
+    "total_score": 5,
+    "q9_score": 0,
+    "is_finished": true,
+    "测评摘要": "总分5分，评估为轻度抑郁倾向",
+    "自由对话历史": [
+      {
+        "role": "user",
+        "content": "好吧"
+      },
+      {
+        "role": "assistant",
+        "content": "我能感受到你愿意分享这些结果，是需要一些勇气的。5分这个分数，它提醒我们可能有些情绪波动或压力正在悄悄影响你——但请记得，这只是一个参考，不是定义你的标签。你最近是否感觉情绪像一层薄雾一样，偶尔遮住阳光？或者有某些时刻，明明很想努力，却觉得力气被轻轻抽走了？"
+      }
+    ],
+    "长期记忆摘要": null
+  }
+}

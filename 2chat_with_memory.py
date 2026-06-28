@@ -1,22 +1,26 @@
 import os
-from langchain_community.chat_models import ChatOpenAI
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
 from dotenv import load_dotenv
+#读取.env文件，将密钥加载到环境变量中
+from langchain_community.chat_models import ChatOpenAI#引入OPENAI的对话模型接口
+from langchain.chains import ConversationChain#专门用来管理对话流，将模型、记忆和输入串联起来，使得模型可以维持上下文对话。
+from langchain.memory import ConversationBufferMemory#记忆存储器，把整个对话历史完整保存下来，并作为上下文传给大模型
 
 
-# 1. 加载 .env 文件中的环境变量
+
+# 1. 读取 .env 文件中的环境变量并写入os.environ文件
+# （程序启动时，操作系统会把当前系统的环境变量复制一份到environ文件，程序执行时候只会去environ文件内找）
 load_dotenv()
 
-# 2. 从环境变量中获取 API Key
-api_key = os.getenv("DEEPSEEK_API_KEY")
-# 1. 配置 DeepSeek API（这里会自动读取或手动填入你 Day 1 下发的 sk-04c7f...）
-# 建议在终端中 set OPENAI_API_KEY=your_key，或者在这里临时明文写入进行测试
-os.environ["OPENAI_API_KEY"] = os.getenv("DEEPSEEK_API_KEY", api_key)
+# 2. 从环境变量中获取 API Key，实际是deepseek的api
+api_key = os.getenv("OPENAI_API_KEY")
+# 1. 配置 DeepSeek API
+#这里将os.environ文件中的OPENAI_API_KEY值设置成api_key的值
+os.environ["OPENAI_API_KEY"] = api_key
+#以上两行其实可以删除，因为我的environ文件中的参数名称就是OPENAI_API_KEY
 os.environ["OPENAI_API_BASE"] = "https://api.deepseek.com"  # 或者是 https://api.deepseek.com/v1
 
-# 2. 初始化 DeepSeek 聊天模型
-# 保持 0.7 的创造力，既能保持共情能力，又不会过于脱轨
+# 2. 实例化chatopenai 客户端接口-deepseek
+# 0.7越大越随机（接受差解的概率）
 llm = ChatOpenAI(
     model_name="deepseek-chat",
     temperature=0.7
@@ -26,11 +30,11 @@ llm = ChatOpenAI(
 memory = ConversationBufferMemory()
 
 # 4. 构建经典对话链
-# verbose=True 是个工程小技巧，能让你在控制台直观看到 LangChain 是如何把“历史记录”悄悄塞给 Prompt 的
+# verbose=True 是个工程小技巧，能让你在控制台直观看到 LangChain 是如何把“历史记录”悄悄塞给 Prompt 的）
 conversation = ConversationChain(
     llm=llm,
     memory=memory,
-    verbose=True  
+    verbose=True
 )
 
 print("==================================================")

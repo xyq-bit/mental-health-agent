@@ -1,22 +1,21 @@
+
 import os
-import re
+import re#正则表达式模块，用于文本匹配清洗和提取
 from dotenv import load_dotenv
 from langchain_community.chat_models import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate#聊天提示词模板
 
-# --- 1. 加载环境变量 ---
-# 会自动查找项目根目录下的 .env 文件
 load_dotenv()
-api_key = os.getenv("DEEPSEEK_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
 
 # 1. 配置 DeepSeek 官方 API
 os.environ["OPENAI_API_KEY"] =  api_key
-os.environ["OPENAI_BASE_URL"] = "https://api.deepseek.com"
+
 os.environ["OPENAI_API_BASE"] = "https://api.deepseek.com"
 
 # 2. 初始化最新满血版大脑
 llm = ChatOpenAI(
-    model_name="deepseek-v4-pro",
+    model_name="deepseek-chat",
     temperature=0.3
 )
 
@@ -56,6 +55,7 @@ prompt_template = ChatPromptTemplate.from_messages([
 ])
 
 # 🔥 【LCEL 新版核心改动 1】：使用管道符 | 将 Prompt 和 LLM 像工厂流水线一样无缝拼装
+#| 在这里不是做位运算，而是被定义成"把左边的输出，接到右边的输入上"。
 chain = prompt_template | llm
 
 # 5. 主业务流程控制
@@ -82,7 +82,8 @@ for i, question in enumerate(phq9_questions, 1):
     # 🔥 【LCEL 新版核心改动 3】：通过 response.content 优雅地抽取出文本内容
     ai_output = response.content
     
-    # 运用正则表达式精准提取模型给出的分数与评语
+    # 运用正则表达式精准提取模型给出的分数与评语；因为模型是随机采样因而可能会出现匹配不上的情况
+    print("模型原始输出：", ai_output)
     score_match = re.search(r"得分:\s*([0-3])", ai_output)
     feedback_match = re.search(r"反馈:\s*([\s\S]*)", ai_output)
     

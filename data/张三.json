@@ -1,0 +1,168 @@
+{
+  "history": [
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你好 张三，我们来做一个PHQ-9心理健康测评。\n\n1. 做任何事都提不起劲或没有乐趣？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您目前的状态挺好的，能保持对生活的兴趣和动力。如果未来有任何情绪上的波动，随时可以和我聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：2. 感到心情低落、沮丧或绝望？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你目前没有感到心情低落或沮丧，这很好。希望你能继续保持这种积极的状态，如果未来有任何情绪波动，我随时在这里倾听。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：3. 入睡困难、睡不安稳或睡得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您在入睡和睡眠质量方面目前没有明显的困扰，这很棒！保持这样的状态对身心健康非常有益。如果未来有任何波动，也可以随时关注自己的节奏哦。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：4. 感到疲倦或没有活力？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你提到没有感到疲倦或没有活力，这很好，说明你目前精力状态不错。保持这种积极的感觉，继续关注自己的身心平衡哦。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：5. 食欲不振或吃得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "content": "0"
+    },
+    {
+      "role": "assistant",
+      "content": "听起来你的食欲状态很平稳，这很棒。保持这样的节奏，身体和心情都会更轻松哦。"
+    },
+    {
+      "role": "assistant",
+      "content": "下一题：6. 觉得自己很糟，或觉得自己很失败，或让自己及家人失望？"
+    }
+  ],
+  "state": {
+    "q_idx": 5,
+    "total_score": 0,
+    "q9_score": 0,
+    "is_finished": false,
+    "测评摘要": null,
+    "自由对话历史": [],
+    "长期记忆摘要": null
+  }
+}
