@@ -24,7 +24,7 @@ print("正在向 DeepSeek 发送测试请求...")
 try:
     # 4. 发送测试消息
     response = client.chat.completions.create(
-        model="deepseek-fake-model",
+        model="deepseek-v4-flash",
         messages=[
             {"role": "system", "content": "你是一个专业的心理咨询助手，负责协助构建心理健康智能体。"},#角色设定
             {"role": "user", "content": "你好！我已经成功切换到环境变量配置方式，能听到我说话吗？"}#第一轮输入

@@ -25,7 +25,7 @@ llm = ChatOpenAI(
     openai_api_key=api_key,
     openai_api_base="https://api.deepseek.com"
 )
-# OpenAI官方原生SDK提供的对象类型；用于创建客户端对象
+# OpenAI官方原生OPENAI SDK提供的对象类型；用于创建客户端对象
 client = openai.OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
 
 PHQ9_QUESTIONS = [
@@ -49,7 +49,7 @@ CRISIS_WARNING_TEXT = (
 )
 
 # ============================================
-# 用户名 + 文件持久化
+# 新增部分：用户名 + 文件持久化
 # ============================================
 DATA_DIR = "data"  # 存放每个用户对话记录的文件夹
 
@@ -59,33 +59,56 @@ def get_user_filepath(username):
     根据用户名生成对应的文件路径，例如 data/张三.json
     每个用户名对应一个独立的json文件，互不干扰
     """
-    os.makedirs(DATA_DIR, exist_ok=True)
+    os.makedirs(DATA_DIR, exist_ok=True)  # 文件夹不存在就创建，exist_ok=True避免文件夹已存在时报错
     return os.path.join(DATA_DIR, f"{username}.json")
 
 
+# 保存用户会话记录
 def save_user_session(username, history, state):
     """
     把当前的history和state保存到该用户对应的json文件里。
-    注意：state里的'等待预警确认'字段不持久化，关闭重开后应该重置为False，
+    注意：state里的'等待预警确认'字段不持久化——这是我们讨论过的，
+    这个字段只是一次连续会话内的临时标记，关闭重开后应该重置为False，
     不应该让用户卡在"上次还没回应预警"的状态里。
+
+    这里用"原子写入"的方式，而不是直接对正式文件写：
+    1. 先把内容完整写进一个临时文件（文件名加 .tmp 后缀），不碰正式文件
+    2. 确认临时文件已经完整写完之后，才用 os.replace() 把临时文件"改名"
+       成正式文件名，这一步会替换掉旧文件
+    原因：如果在"写入内容"这一步的中途，程序被打断（崩溃/断电/强制关闭），
+    受影响的只是这个 .tmp 临时文件，正式文件这一刻完全没有被动过。
+
+    这个函数返回一个布尔值（True/False），表示这次保存是否成功：
+    - 写入过程中如果出现任何异常（比如磁盘满了、没有写入权限），
+      不会让程序崩溃，而是捕获这个异常、返回False，
+      把"要不要告诉用户、要不要重试"这个决定权交给调用这个函数的代码，
+      让用户当前正在进行的对话不会被这种底层的存储问题打断。
     """
     state_to_save = {k: v for k, v in state.items() if k != '等待预警确认'}
     data = {"history": history, "state": state_to_save}
     filepath = get_user_filepath(username)
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    tmp_filepath = filepath + ".tmp"
+
+    try:
+        with open(tmp_filepath, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp_filepath, filepath)
+        return True
+    except OSError as e:
+        # OSError涵盖了大多数文件系统层面的问题：磁盘满了、没有权限、路径不合法等
+        print(f"警告：用户 {username} 的本轮对话保存失败（原因：{e}）")
+        return False
 
 
 def load_user_session(username):
     """
     尝试读取该用户的历史记录。
-    返回值是 (status, history, state) 三元组，status有三种可能：
-    - "new"       ：文件不存在，是真正的新用户
-    - "corrupted" ：文件存在但内容损坏（不是合法json，或缺少必要字段）——
-                    这种情况绝不能直接当作新用户去覆盖，必须让调用方知道
-                    "这里曾经有数据，只是读不出来了"，由调用方决定怎么处理，
-                    文件本身保持原样，不在这里做任何写入动作。
-    - "ok"        ：成功读取，history和state是恢复出来的真实内容
+    返回 (status, history, state) 三元组：
+    - status == "new"       ：文件不存在，是真正的新用户
+    - status == "corrupted" ：文件存在，但内容已经损坏，读取失败——
+                              这种情况下，这个函数本身不会对文件做任何写入/修改/删除操作，
+                              文件原封不动留在磁盘上，把"怎么处理"这个决定权交给调用方
+    - status == "ok"        ：成功读取，history和state是恢复出来的真实内容
     """
     filepath = get_user_filepath(username)
     if not os.path.exists(filepath):
@@ -97,8 +120,9 @@ def load_user_session(username):
         history = data["history"]
         state = data["state"]
     except (json.JSONDecodeError, KeyError) as e:
-        # JSONDecodeError：文件内容不是合法的json格式（比如写了一半）
-        # KeyError：文件是合法json，但缺少"history"或"state"这两个key（结构不对）
+        # JSONDecodeError：文件内容不是合法的json格式（比如写了一半被中断）
+        # KeyError：文件是合法json，但缺少"history"或"state"这两个必须的key
+        # 这里只是读取失败、打印警告，绝对不会删除或者重新写入这个文件
         print(f"警告：用户 {username} 的存档文件损坏，无法读取（原因：{e}）")
         return "corrupted", None, None
 
@@ -119,6 +143,21 @@ def build_fresh_state():
         '长期记忆摘要': None,
         '等待预警确认': False
     }
+
+
+def save_and_warn_if_failed(username, history, state):
+    """
+    调用save_user_session保存这一轮对话；如果保存失败（返回False），
+    在history末尾追加一条温和的提示，告诉用户这一轮可能没有被保存下来，
+    但不阻塞、不报错，用户依然可以正常继续输入、继续对话——
+    只是这一轮的内容，万一现在关闭页面，可能会丢失。
+    """
+    saved_ok = save_user_session(username, history, state)
+    if not saved_ok:
+        history.append({
+            "role": "assistant",
+            "content": "（系统提示：刚才这一轮内容保存时遇到了一点问题，如果担心丢失，建议稍后重新发一次。不影响您继续对话。）"
+        })
 
 
 # --- 3. LCEL 测评链 ---
@@ -163,6 +202,7 @@ def calculate_risk_level(total_score, q9_score):
 
 
 # --- 4. 核心逻辑 ---
+# 注意：chat_and_assess现在多了一个username参数，用于知道该把进度存到哪个文件
 def chat_and_assess(user_input, history, state, username):
     if state is None:
         state = build_fresh_state()
@@ -195,7 +235,7 @@ def chat_and_assess(user_input, history, state, username):
             "content": f"测评完成！总分 {state['total_score']}。评估结果：{risk_level}。现在我们可以自由交流了。"
         })
 
-        save_user_session(username, history, state)
+        save_and_warn_if_failed(username, history, state)  # 持久化：每轮结束都存一次，失败时追加提示，不阻塞对话
         return "", history, state
 
     if state['is_finished']:
@@ -236,7 +276,7 @@ def chat_and_assess(user_input, history, state, username):
 
             state['自由对话历史'] = state['自由对话历史'][25:]
 
-        save_user_session(username, history, state)
+        save_and_warn_if_failed(username, history, state)  # 持久化：每轮结束都存一次，失败时追加提示，不阻塞对话
         return "", history, state
 
     # 测评阶段
@@ -278,31 +318,33 @@ def chat_and_assess(user_input, history, state, username):
                 "content": f"测评完成！总分 {state['total_score']}。评估结果：{risk_level}。现在我们可以自由交流了。"
             })
 
-    save_user_session(username, history, state)
+    save_and_warn_if_failed(username, history, state)  # 持久化：每轮结束都存一次，失败时追加提示，不阻塞对话
     return "", history, state
 
 
 # ============================================
-# 用户进入会话时的处理逻辑
+# 新增：用户进入会话时的处理逻辑
 # ============================================
 def enter_session(username):
     """
     用户输入名字并点击"进入"后触发。
     检查该用户名是否有历史记录：
-    - 真正的新用户 → 新建记录
-    - 有历史记录、读取成功 → 恢复
-    - 有历史记录、但读取失败（文件损坏） → 绝不能直接当新用户处理并覆盖文件！
-      这种情况下，原始文件依然完整保留在磁盘上，只是先用一条提示告诉用户
-      "检测到存档异常"，不会自动新建/覆盖，避免误删可能还能人工恢复的数据。
+    - 真正的新用户（status=="new"） → 新建记录
+    - 有历史记录、读取成功（status=="ok"） → 恢复
+    - 有历史记录、但读取失败（status=="corrupted"） → 停在登录区域，
+      明确提示用户"检测到存档异常"，绝不调用save_user_session去覆盖这个文件名。
+      旧文件因此被完整保留在磁盘上，不会因为用户接下来的任何操作被改写——
+      因为程序根本不会再对这个文件名执行任何写入，直到这个问题被人工处理。
     """
     username = username.strip()
     if not username:
+        # 用户没填名字就点了进入，给一个提示，不切换界面
         return (
             [{"role": "assistant", "content": "请先输入一个名字再进入～"}],
             None,
             "",
-            gr.update(visible=True),
-            gr.update(interactive=False)
+            gr.update(visible=True),       # 登录区域保持可见
+            gr.update(interactive=False)   # 输入框不可用
         )
 
     status, saved_history, saved_state = load_user_session(username)
@@ -311,14 +353,15 @@ def enter_session(username):
         history, state = saved_history, saved_state
 
     elif status == "corrupted":
-        # 关键：这里绝对不调用 save_user_session，不能用空记录去覆盖这个文件。
-        # 文件本身原封不动留在磁盘上，只是这次没能正常读出来。
+        # 关键：这里绝对不会调用save_user_session，也不会继续往下走。
+        # 旧文件原封不动留在磁盘上，用户暂时无法继续使用这个用户名，
+        # 直到管理员人工检查/修复了 data 文件夹里对应的文件。
         return (
             [{"role": "assistant", "content": (
                 f"⚠️ 检测到「{username}」的存档文件存在异常，无法正常读取。\n"
-                f"为避免覆盖丢失原有数据，暂停在此处。\n"
-                f"如果您确认可以放弃之前的记录、重新开始，请换一个新的名字重新进入；"
-                f"如果这是重要数据，请联系管理员协助检查 data 文件夹中对应的文件。"
+                f"为避免覆盖丢失原有数据，该用户名暂时无法继续使用。\n"
+                f"原始文件已被完整保留在 data 文件夹中，请联系管理员协助检查；"
+                f"如果确认可以放弃之前的记录，可以换一个新的名字重新开始。"
             )}],
             None,
             "",
@@ -326,23 +369,23 @@ def enter_session(username):
             gr.update(interactive=False)
         )
 
-    else:  # status == "new"，真正的新用户
+    else:  # status == "new"，真正的新用户，磁盘上原本就没有这个文件，新建是安全的
         history = [{"role": "assistant", "content": f"你好 {username}，我们来做一个PHQ-9心理健康测评。\n\n" + PHQ9_QUESTIONS[0]}]
         state = build_fresh_state()
-        save_user_session(username, history, state)  # 新用户立即建档，这里覆盖是安全的——本来就没有旧数据
+        save_user_session(username, history, state)  # 新用户立即建档
 
     return (
         history,
         state,
         username,
-        gr.update(visible=False),
-        gr.update(interactive=True)
+        gr.update(visible=False),      # 进入成功后隐藏登录区域
+        gr.update(interactive=True)    # 允许输入
     )
 
 
 # --- 5. UI 界面 ---
 with gr.Blocks() as demo:
-    # 登录区域：输入用户名
+    # 登录区域：输入用户名，登录后自动隐藏
     with gr.Column(visible=True) as login_area:
         gr.Markdown("### 请输入您的名字以开始/继续测评")
         username_input = gr.Textbox(label="您的名字", placeholder="例如：张三")
