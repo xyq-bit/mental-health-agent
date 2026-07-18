@@ -1,0 +1,333 @@
+{
+  "history": [
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你好 2，我们来做一个PHQ-9心理健康测评。\n\n1. 做任何事都提不起劲或没有乐趣？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你最近的状态还不错，能对事情保持兴趣和动力，这真是太好了。希望你能继续享受生活中的小确幸。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：2. 感到心情低落、沮丧或绝望？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您目前情绪状态较为平稳，没有受到低落或沮丧情绪的困扰，这真是太好了。如果未来有任何情绪波动，记得我随时在这里支持您。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：3. 入睡困难、睡不安稳或睡得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您的睡眠状态目前很稳定，这真是一件值得开心的事情。良好的睡眠是身心健康的重要基础，希望您能继续保持这份平衡与安宁。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：4. 感到疲倦或没有活力？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你目前精力状态不错，没有感到疲倦或缺乏活力，这很好。继续保持这样的状态，如果有任何变化，随时可以和我聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：5. 食欲不振或吃得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您的食欲状态还不错，这很棒！如果偶尔有些波动，也是正常的，不必太担心。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：6. 觉得自己很糟，或觉得自己很失败，或让自己及家人失望？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你目前对自己的评价比较积极，没有陷入自我否定的情绪中，这很好。如果未来有类似感受，记得你并不孤单，可以随时分享。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：7. 专注于别的事有困难，例如看报纸或看电视？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你提到没有这方面的困难，听起来你在专注力上保持得不错，这很值得肯定。如果以后有需要，也可以随时聊聊其他感受。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：8. 行动或说话速度慢到别人已经察觉？或者正好相反，烦躁不安、动来动去？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你在行动和说话节奏上保持得比较平稳，没有出现明显的迟缓或烦躁不安的情况，这很好。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：9. 脑海中曾冒出过'不如死掉算了'或'用某种方式伤害自己'的念头？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "1",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "我能感受到你偶尔会经历一些沉重、疲惫的时刻，那些念头可能只是内心在呼救，而不是你真的想放弃。请记得，每当你感到低落时，都值得被温柔地对待。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "⚠️ 我注意到你刚才提到了一些关于伤害自己的想法。这些感受很沉重，但你不是一个人在面对它们。\n如果你现在有强烈的自伤冲动，请立即联系当地的心理危机干预热线，或前往最近的医院急诊。\n我会一直在这里陪着你，我们可以继续聊聊你现在的感受。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "content": "没啥感受"
+    },
+    {
+      "role": "assistant",
+      "content": "感谢你愿意告诉我你的感受。听到你说“没啥感受”，我并没有觉得这很奇怪——有时候，当情绪太沉重或者太模糊时，反而很难用语言去捕捉它。这种“空白”或“麻木”本身，可能也是一种信号，说明你的内心正在承受一些不容易表达的东西。\n\n我想让你知道：你的感受是有意义的，即使它只是“没啥感受”。你不是一个人面对这些。如果你愿意，我们可以慢慢聊一聊，比如最近的生活里有没有什么事情让你觉得特别吃力、消耗，或者让你感到孤独？你也可以只是待在这里，不说话也可以。\n\n不过，从你之前的测评结果看，我仍然有些担心你的安全。如果你发现自己有伤害自己或结束生命的想法，我真诚地建议你去联系一位可以信任的精神科医生或心理咨询师，让他们陪你一起梳理这些感受。如果你现在愿意的话，也可以尝试拨打24小时心理危机干预热线（比如：北京24小时心理援助热线：010-82951332），那里有专业的人可以倾听和帮助你。\n\n我会一直在这里陪伴你，不评判、不催促。你愿意再和我说说“没啥感受”背后的空闲或情绪吗？哪怕只有一点点。"
+    },
+    {
+      "role": "assistant",
+      "content": "测评完成！总分 1。评估结果：重度抑郁倾向（含自杀风险信号，需特别关注）。现在我们可以自由交流了。"
+    }
+  ],
+  "state": {
+    "q_idx": 9,
+    "total_score": 1,
+    "q9_score": 1,
+    "is_finished": true,
+    "测评摘要": "总分1分，评估为重度抑郁倾向（含自杀风险信号，需特别关注）",
+    "自由对话历史": [],
+    "长期记忆摘要": null
+  }
+}

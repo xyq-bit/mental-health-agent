@@ -1,0 +1,398 @@
+{
+  "history": [
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你好 1，我们来做一个PHQ-9心理健康测评。\n\n1. 做任何事都提不起劲或没有乐趣？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您最近的心情和精神状态都还不错，这真让人感到欣慰。如果未来有任何困扰，随时可以和我聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：2. 感到心情低落、沮丧或绝望？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来您目前情绪状态比较平稳，没有明显的低落或沮丧感，这很好。请继续保持这种积极的状态，如果您有任何情绪上的波动，随时可以和我聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：3. 入睡困难、睡不安稳或睡得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你目前没有受到睡眠问题的困扰，这真是太好了。良好的睡眠是身心健康的重要基础，希望你继续保持这种平衡的状态。如果未来有任何睡眠方面的困扰，随时可以和我聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：4. 感到疲倦或没有活力？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你最近状态不错，没有感到疲倦或缺乏活力，这真是太好了。希望你能继续保持这种轻松和充满能量的感觉。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：5. 食欲不振或吃得太多？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你最近在饮食方面保持得不错，没有出现食欲不振或暴食的困扰，这很棒。请继续保持这样的平衡状态，如果未来有任何波动，也请记得照顾好自己。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：6. 觉得自己很糟，或觉得自己很失败，或让自己及家人失望？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你目前没有觉得自己很糟或很失败，这挺好的。如果你愿意，可以随时和我分享更多感受。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：7. 专注于别的事有困难，例如看报纸或看电视？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听起来你在专注力方面没有明显困扰，这很好。如果以后感觉需要调整，随时可以聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：8. 行动或说话速度慢到别人已经察觉？或者正好相反，烦躁不安、动来动去？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "看起来你目前的状态比较平稳，没有明显的行动或语言上的迟缓或躁动，这很好。如果你有任何感受或困扰，随时可以和我聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "下一题：9. 脑海中曾冒出过'不如死掉算了'或'用某种方式伤害自己'的念头？",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "0",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "听到您这样的回答，我感到很欣慰。您似乎没有受到这些负面念头的困扰，这很好。请继续关注自己的情绪健康，有任何变化都可以随时和我聊聊。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "测评完成！总分 0。评估结果：没有明显抑郁倾向。现在我们可以自由交流了。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你好",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "你好！很高兴能和你聊聊。看到你完成了PHQ-9测评，结果显示总分0分，评估为没有明显抑郁倾向——这真是太好了！这说明你最近的情绪状态可能比较平稳、积极。当然，这份结果只是一个参考，每个人的感受都是独特而真实的。如果你愿意，可以和我分享你最近的心情、生活或任何想说的，我会在这里认真倾听，陪你一起梳理。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "metadata": null,
+      "content": [
+        {
+          "text": "重新开始测评",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "assistant",
+      "metadata": null,
+      "content": [
+        {
+          "text": "好的，我理解你想重新通过测评来更清晰地了解自己近期的情绪状态。我们可以一起再回顾一下PHQ-9的9个问题，你只需要根据过去两周的实际情况，选择最符合自己的频率选项（0-3分）。我会逐条提问，并注意你的感受，请你放松、诚实地回答就好。准备好了吗？我们开始第一个问题：“你是否感到做事时没什么兴趣或乐趣？” ——请从“完全不会”“有几天”“一半以上的天数”“几乎每天”中选择一个。",
+          "type": "text"
+        }
+      ],
+      "options": null
+    },
+    {
+      "role": "user",
+      "content": "不想回顾重新开始"
+    },
+    {
+      "role": "assistant",
+      "content": "收到，完全理解你不想再回顾测评过程，这很正常。有时重复面对问题会让人感到沉重或烦躁，我们完全不需要非要按流程走。\n\n那我们就直接跳过测评环节。你希望和我聊聊什么？无论是最近的心情、生活中的一件小事，还是任何想倾诉的，我都在这里静静听你说。"
+    }
+  ],
+  "state": {
+    "q_idx": 9,
+    "total_score": 0,
+    "q9_score": 0,
+    "is_finished": true,
+    "测评摘要": "总分0分，评估为没有明显抑郁倾向",
+    "自由对话历史": [
+      {
+        "role": "user",
+        "content": "你好"
+      },
+      {
+        "role": "assistant",
+        "content": "你好！很高兴能和你聊聊。看到你完成了PHQ-9测评，结果显示总分0分，评估为没有明显抑郁倾向——这真是太好了！这说明你最近的情绪状态可能比较平稳、积极。当然，这份结果只是一个参考，每个人的感受都是独特而真实的。如果你愿意，可以和我分享你最近的心情、生活或任何想说的，我会在这里认真倾听，陪你一起梳理。"
+      },
+      {
+        "role": "user",
+        "content": "重新开始测评"
+      },
+      {
+        "role": "assistant",
+        "content": "好的，我理解你想重新通过测评来更清晰地了解自己近期的情绪状态。我们可以一起再回顾一下PHQ-9的9个问题，你只需要根据过去两周的实际情况，选择最符合自己的频率选项（0-3分）。我会逐条提问，并注意你的感受，请你放松、诚实地回答就好。准备好了吗？我们开始第一个问题：“你是否感到做事时没什么兴趣或乐趣？” ——请从“完全不会”“有几天”“一半以上的天数”“几乎每天”中选择一个。"
+      },
+      {
+        "role": "user",
+        "content": "不想回顾重新开始"
+      },
+      {
+        "role": "assistant",
+        "content": "收到，完全理解你不想再回顾测评过程，这很正常。有时重复面对问题会让人感到沉重或烦躁，我们完全不需要非要按流程走。\n\n那我们就直接跳过测评环节。你希望和我聊聊什么？无论是最近的心情、生活中的一件小事，还是任何想倾诉的，我都在这里静静听你说。"
+      }
+    ],
+    "长期记忆摘要": null
+  }
+}

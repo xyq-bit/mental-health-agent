@@ -1,0 +1,15 @@
+{
+    "state": {
+        "username": "test_user_01",
+        "user_data_path": "test_user_01",
+        "phase": 1,
+        "waiting": false,
+        "q_idx": 1,
+        "total_score": 0,
+        "q9_score": 0,
+        "crisis_flag": false,
+        "messages": [],
+        "assessment_result": null,
+        "long_term_summary": null
+    }
+}
